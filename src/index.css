@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+}
+
+/* ---------- Dark (深色模式) ---------- */
+[data-theme="dark"] {
+  --bg: #0d0d0d;
+  --bg-elev: #161616;
+  --bg-elev-2: #1e1e1e;
+  --border: #2a2a2a;
+  --text: #f2f2f0;
+  --text-secondary: #9a9a97;
+  --text-tertiary: #6b6b68;
+  --accent: #5b8cff;
+  --accent-text: #ffffff;
+  --danger: #ff5c5c;
+  --danger-bg: #2a1414;
+  --success: #4ade80;
+  --warning: #f5b942;
+}
+
+/* ---------- Light (淺色模式) ---------- */
+[data-theme="light"] {
+  --bg: #fafafa;
+  --bg-elev: #ffffff;
+  --bg-elev-2: #f1f1f0;
+  --border: #e3e3e1;
+  --text: #171716;
+  --text-secondary: #6b6b68;
+  --text-tertiary: #9a9a97;
+  --accent: #3363e0;
+  --accent-text: #ffffff;
+  --danger: #d92d2d;
+  --danger-bg: #fbeaea;
+  --success: #1f9d55;
+  --warning: #b3790f;
+}
+
+/* ---------- Milk Tea (奶茶色系) ---------- */
+[data-theme="milktea"] {
+  --bg: #f4ebe1;
+  --bg-elev: #fbf5ee;
+  --bg-elev-2: #e8dec8;
+  --border: #d9c9ae;
+  --text: #4a3e3d;
+  --text-secondary: #8a746a;
+  --text-tertiary: #a8927f;
+  --accent: #a66a4c;
+  --accent-text: #fdf6ee;
+  --danger: #b5453a;
+  --danger-bg: #f2ded9;
+  --success: #6f8f5c;
+  --warning: #b3812f;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "SF Pro Text", "PingFang TC", "Noto Sans TC", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+  user-select: none;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+.card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+.btn-primary:hover { filter: brightness(1.06); }
+.btn-primary:active { filter: brightness(0.94); }
+.btn-primary:disabled { opacity: .35; cursor: not-allowed; }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.btn-ghost:hover { background: var(--bg-elev-2); }
+
+.input {
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.input:focus { outline: 2px solid color-mix(in srgb, var(--accent) 50%, transparent); outline-offset: 1px; }
