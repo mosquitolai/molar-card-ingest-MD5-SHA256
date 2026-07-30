@@ -1,0 +1,2 @@
+1d6f7e73ee9b9d446622eae1b4b33fe03e4169c78109856ad4d67a730792bc39  ../dist/MolaCard_1.0.0_aarch64.dmg
+6e42b4bae8f59a81e3a836e294a7b29e1c35fd353ac797f9b81263b2f22adce0  ../dist/MolaCard.app.zip

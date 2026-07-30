@@ -1,0 +1,32 @@
+MolaCard 安裝說明
+
+1) 使用 DMG 安裝（推薦）
+   - 在 Finder 中雙擊 `MolaCard_1.0.0_aarch64.dmg`，將會掛載映像檔並顯示安裝視窗。
+   - 把 `MolaCard.app` 拖放到 `Applications` 資料夾（或依指示安裝）。
+   - 卸載 DMG：在 Finder 側欄選擇掛載的映像，點擊「退出」或右鍵選擇「彈出」。
+
+2) 直接使用壓縮的 App
+   - 解壓 `MolaCard.app.zip`（在 Finder 中雙擊即可）。
+   - 將解壓後的 `MolaCard.app` 拖放到 `/Applications`。
+
+3) 驗證檔案
+   - 目標檔案：
+     * dist/MolaCard_1.0.0_aarch64.dmg
+     * dist/MolaCard.app.zip
+   - 取得校驗碼：
+     * SHA256 列在 `dist/checksums.txt`。
+
+4) codesign / Gatekeeper
+   - 此建置尚未用 Apple 開發者證書完整簽章；若要在其他機器上直接執行或於 App Store 發佈，請使用 `codesign` 與開發者帳號重新簽章。
+
+常見命令（在本機終端使用）:
+
+# 顯示 DMG
+open -R dist/MolaCard_1.0.0_aarch64.dmg
+
+# 打開 DMG
+open dist/MolaCard_1.0.0_aarch64.dmg
+
+# 解壓 zip 並移動到 /Applications
+unzip dist/MolaCard.app.zip -d /tmp && mv /tmp/MolaCard.app /Applications/
+
